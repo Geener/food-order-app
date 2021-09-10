@@ -9,14 +9,15 @@ const CategoryMainSection = (props) => {
     return (
       <Item
         key={meal.id}
-        name={meal.name}
         food={meal}
         onSelectedFood={props.onSelectCurrentFood}
       >
         <Card>
           <Card.Img variant="top" src={meal.picture} />
           <Card.Body>
-            <Card.Title>{meal.name}</Card.Title>
+            <Card.Title>
+              {meal.name} ${meal.price}
+            </Card.Title>
             <Card.Text>{meal.description}</Card.Text>
           </Card.Body>
         </Card>

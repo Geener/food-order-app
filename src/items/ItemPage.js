@@ -1,32 +1,26 @@
-import Topping from "../Topping";
+import Topping from "./Topping";
+
+import ItemForm from "./itemForm/ItemForm";
 
 import { ListGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import AddToCartButton from "../english/orderPage/AddToCartButton";
-import { useContext } from "react";
-import CartContext from "../store/CartContext";
 
 const ItemPage = (props) => {
+  //array of all the toppings for selected food
   const allToppings = props.selectedFood.toppings;
-  const cartCtx = useContext(CartContext);
 
-  const addToCartHandler = () => {
-    cartCtx.addItem(props.selectedFood);
-
-    props.onSelectCurrentFood({
-      name: null,
-      description: null,
-      picture: null,
-      toppings: null,
-      id: null,
-    });
-  };
+  const selectedToppingsArray = [];
 
   const options = allToppings.map((topping) => {
     return (
       <>
         <ListGroup.Item>
-          <Topping name={topping.name} price={topping.price} />
+          <Topping
+            toppingsArray={selectedToppingsArray}
+            name={topping.name}
+            price={topping.price}
+            isSelected={topping.isSelected}
+          />
         </ListGroup.Item>
       </>
     );
@@ -38,7 +32,11 @@ const ItemPage = (props) => {
         <Card.Header>Select your toppings</Card.Header>
         <ListGroup variant="flush">{options}</ListGroup>
       </Card>
-      <AddToCartButton onClick={addToCartHandler} />
+      <ItemForm
+        toppingsArray={selectedToppingsArray}
+        selectedFood={props.selectedFood}
+        onSelectCurrentFood={props.onSelectCurrentFood}
+      />
     </>
   );
 };

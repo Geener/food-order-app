@@ -7,6 +7,7 @@ import ItemPage from "../../items/ItemPage";
 const OrderPageEnglish = (props) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  //Controls what food is originally selected, initially set to null
   const [currentFood, setCurrentFood] = useState({
     name: null,
     description: null,
@@ -15,10 +16,12 @@ const OrderPageEnglish = (props) => {
     id: null,
   });
 
+  //used to open the cart
   const openCartHandler = () => {
     setIsCartOpen(true);
   };
 
+  //used to close the cart
   const closeCartHandler = () => {
     setIsCartOpen(false);
   };
