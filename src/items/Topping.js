@@ -78,12 +78,15 @@ const Topping = (props) => {
   //can click on div to checked/uncheck topping
   const divClickHandler = () => {
     checkboxRef.current.checked = !checkboxRef.current.checked;
+    selectedBoxHandler();
   };
 
   return (
     <>
-      <h3>{props.name}</h3>
-      {priceDisplayer(props.price)}
+      <div onClick={divClickHandler}>
+        <h3>{props.name}</h3>
+        {priceDisplayer(props.price)}
+      </div>
       <input
         ref={checkboxRef}
         type="checkbox"
