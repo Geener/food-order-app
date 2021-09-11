@@ -4,6 +4,8 @@ import CartContext from "../store/CartContext";
 import Modal from "../UI/modal/Modal";
 import CartAddRemoveButtons from "./CartAddRemoveButtons";
 
+import classes from "./Cart.module.css";
+
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
@@ -11,7 +13,16 @@ const Cart = (props) => {
   const totalAmount = `Total: $${cartCtx.totalAmount.toFixed(2)}`;
 
   const displayItems = cartCtx.items.map((item) => {
-    const finalPrice = item.price * item.amount;
+    let toppingsPrice = 0;
+
+    for (let i = 0; i < item.selectedToppings.length; i++) {
+      // console.log("topping: " + item.selectedToppings[i].toppingPrice);
+      toppingsPrice += item.selectedToppings[i].toppingPrice;
+    }
+
+    // console.log(toppingsPrice);
+
+    const finalItemPrice = item.price + toppingsPrice;
 
     const onAddItemButtonHandler = () => {
       // console.log("adding item");
@@ -35,16 +46,20 @@ const Cart = (props) => {
     });
 
     return (
-      <>
-        <h5>
-          x{item.amount} {item.name} ${finalPrice.toFixed(2)}
-        </h5>
-        <ul>{displayToppings}</ul>
+      <div className={classes.cartItem}>
+        <div>
+          <h5>
+            {item.name} ${item.price}
+          </h5>
+          <ul>{displayToppings}</ul>
+        </div>
         <CartAddRemoveButtons
           addItem={onAddItemButtonHandler}
           removeItem={onRemoveItemButtonHandler}
+          itemAmount={item.amount}
+          itemPrice={finalItemPrice.toFixed(2)}
         />
-      </>
+      </div>
     );
   });
 

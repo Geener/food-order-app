@@ -23,8 +23,6 @@ const idChecker = (stateArray, newItemID) => {
 };
 
 const cartReducer = (state, action) => {
-  const finalPrice = action.item.amount * action.item.price;
-
   if (action.type === "ADD") {
     let updatedItems;
     let itemToppingPrice = 0;
@@ -50,10 +48,15 @@ const cartReducer = (state, action) => {
     for (let i = 0; i < toppingArray.length; i++) {
       itemToppingPrice += Number(toppingArray[i].toppingPrice);
     }
+    // console.log("TEST itemToppingPrice: " + itemToppingPrice);
 
-    const finalToppingPrice = itemToppingPrice * action.item.amount;
+    const finalPrice =
+      action.item.amount * (action.item.price + itemToppingPrice);
 
-    let updatedTotalAmount = state.totalAmount + finalPrice + finalToppingPrice;
+    // const finalToppingPrice = itemToppingPrice * action.item.amount;
+    // console.log("TEST finalToppingPrice: " + finalToppingPrice);
+
+    let updatedTotalAmount = state.totalAmount + finalPrice;
 
     updatedTotalAmount.toFixed(2);
 
