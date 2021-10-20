@@ -66,16 +66,36 @@ const sideMeals = [
     name: "Fries",
     description: "This is a delicious Fries",
     picture: FriesPic,
+    toppings: [
+      { name: "Small", price: 0, isSelected: true },
+      { name: "Medium", price: 0.99, isSelected: false },
+      { name: "Large", price: 1.99, isSelected: false },
+    ],
+    id: "s1",
+    price: 1.99,
   },
   {
     name: "Ice Cream",
     description: "This is a delicious Ice Cream",
     picture: IcecreamPic,
+    toppings: [
+      { name: "Vanilla", price: 0, isSelected: true },
+      { name: "Chocolate", price: 0, isSelected: false },
+      { name: "Single Scoop", price: 0, isSelected: true },
+      { name: "Double Scoop", price: 0.99, isSelected: false },
+    ],
+    id: "s2",
+    price: 1.99,
   },
   {
     name: "Cookie",
     description: "This is a delicious Cookie",
     picture: CookiePic,
+    toppings: [
+      { name: "Extra Cookie", price: 0.50, isSelected: false },
+    ],
+    id: "s3",
+    price: 0.99,
   },
 ];
 

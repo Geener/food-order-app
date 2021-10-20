@@ -32,7 +32,6 @@ const CartAddRemoveButtons = (props) => {
       </div>
 
       <div className={classes.itemPrice}>
-        <h5>${props.itemPrice}</h5>
       </div>
     </div>
   );

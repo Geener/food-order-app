@@ -2,7 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid rgb(0, 191, 255);
   padding: 1rem;
   margin: 1rem;
+}
+
+.cartItem h5 {
+  font-size: 25px;
+}
+
+.totalPrice {
+  color: rgb(0, 191, 255);
+  margin-left: 15px;
+}
+
+.noItems {
+  color: rgb(0, 191, 255);
+  text-align: center;
 }
