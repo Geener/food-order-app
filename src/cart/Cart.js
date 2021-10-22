@@ -13,19 +13,16 @@ const Cart = (props) => {
   const totalAmount = <h3 className={classes.totalPrice}>Total: ${cartCtx.totalAmount.toFixed(2)}</h3>;
 
   const displayItems = cartCtx.items.map((item) => {
+    console.log(item)
+    
+
     let toppingsPrice = 0;
 
     for (let i = 0; i < item.selectedToppings.length; i++) {
-      // console.log("topping: " + item.selectedToppings[i].toppingPrice);
       toppingsPrice += item.selectedToppings[i].toppingPrice;
     }
 
-    // console.log(toppingsPrice);
-
-    const finalItemPrice = item.price + toppingsPrice;
-
     const onAddItemButtonHandler = () => {
-      // console.log("adding item");
       cartCtx.addItem({ ...item, amount: 1 });
     };
 
@@ -35,15 +32,33 @@ const Cart = (props) => {
 
     const displayToppings = item.selectedToppings.map((topping) => {
       if (topping.toppingPrice === 0) {
-        return <li>{topping.toppingName}: Free</li>;
+        return <li>{topping.toppingName}</li>;
       } else {
         return (
           <li>
-            {topping.toppingName}: ${topping.toppingPrice}
+            {topping.toppingName}: +${topping.toppingPrice}
           </li>
         );
       }
     });
+
+    let displaySize = ""
+
+    if (item.selectedSize.length > 0) {
+      displaySize = item.selectedSize.map((size) => {
+        if (size.sizePrice === 0) {
+          return <h6>{size.sizeName}</h6>;
+        } else {
+          return (
+            <h6>
+              {size.sizeName}: +${size.sizePrice}
+            </h6>
+          );
+        }
+      
+    }) }
+
+    
 
     return (
       <div className={classes.cartItem}>
@@ -51,6 +66,7 @@ const Cart = (props) => {
           <h5>
             {item.name} ${item.price}
           </h5>
+          <h6>{displaySize}</h6>
           <ul>{displayToppings}</ul>
         </div>
         <CartAddRemoveButtons

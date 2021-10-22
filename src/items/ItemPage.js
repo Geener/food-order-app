@@ -1,4 +1,5 @@
 import Topping from "./Topping";
+import Size from "./Size"
 
 import ItemForm from "./itemForm/ItemForm";
 
@@ -8,10 +9,12 @@ import { Card } from "react-bootstrap";
 const ItemPage = (props) => {
   //array of all the toppings for selected food
   const allToppings = props.selectedFood.toppings;
+  const allSizes = props.selectedFood.sizes;
 
   const selectedToppingsArray = [];
+  const selectedSizeArray = [];
 
-  const options = allToppings.map((topping) => {
+  const toppingOptions = allToppings.map((topping) => {
     return (
       <>
         <ListGroup.Item>
@@ -26,14 +29,32 @@ const ItemPage = (props) => {
     );
   });
 
+  const sizeOptions = allSizes.map((size) => {
+    return (
+      <>
+      <ListGroup.Item>
+          <Size 
+            sizeArray={selectedSizeArray} 
+            name={size.name}
+            price={size.price}
+            isSelected={size.isSelected}/>
+        </ListGroup.Item>
+        </>
+    )
+  })
+
   return (
     <>
       <Card style={{ width: "90%" }}>
+        {allSizes.length > 0 && <Card.Header>Select your size</Card.Header>}
+        <ListGroup variant="flush">{sizeOptions}</ListGroup>
         <Card.Header>Select your toppings</Card.Header>
-        <ListGroup variant="flush">{options}</ListGroup>
+        <ListGroup variant="flush">{toppingOptions}</ListGroup>
+        
       </Card>
       <ItemForm
         toppingsArray={selectedToppingsArray}
+        sizeArray = {selectedSizeArray}
         selectedFood={props.selectedFood}
         onSelectCurrentFood={props.onSelectCurrentFood}
       />

@@ -6,23 +6,20 @@ const Topping = (props) => {
 
   //When page is loaded, add all default toppings to list
   useEffect(() => {
-    if (checkboxRef.current.checked === true) {
-      // console.log(props.toppingsArray);
-      // console.log("Pushing " + props.name);
+    if (checkboxRef.current.checked) {
       props.toppingsArray.push({
         toppingName: props.name,
         toppingPrice: props.price,
       });
-      // console.log(props.toppingsArray);
     }
   }, []);
 
   //used to format pricing, says free if 0$
   const priceDisplayer = (price) => {
     if (price === 0) {
-      return <h5>Free</h5>;
+      return <h5></h5>;
     } else {
-      return <h5>${props.price}</h5>;
+      return <h5>+${props.price}</h5>;
     }
   };
 
@@ -53,25 +50,19 @@ const Topping = (props) => {
       if (isElementInArray(toppingsArray, props.name)) {
         return;
       } else {
-        // console.log(props.toppingsArray);
         //if not add topping to the array
         props.toppingsArray.push({
           toppingName: props.name,
           toppingPrice: props.price,
         });
-        // console.log("Pushing " + props.name);
-        // console.log(props.toppingsArray);
       }
 
       //removes topping from array if unchecked
     } else if (checkboxRef.current.checked === false) {
-      // console.log(props.toppingsArray);
-      // console.log("Popping " + props.name);
       props.toppingsArray.splice(
         indexFinder(props.toppingsArray, props.name),
         1
       );
-      // console.log(props.toppingsArray);
     }
   };
 

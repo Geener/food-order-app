@@ -10,6 +10,7 @@ const ItemForm = (props) => {
 
   const newIDCreator = () => {
     const toppingNames = [];
+    const sizeNames = [];
 
     //adds toppings names to new array
     for (let i = 0; i < props.toppingsArray.length; i++) {
@@ -22,8 +23,20 @@ const ItemForm = (props) => {
       toppingString += toppingNames.sort()[i];
     }
 
+    //adds size name to a new array
+    if (props.sizeArray.length == 1) {
+      sizeNames.push(props.sizeArray[0].sizeName);
+    }
+    
+
+    //adds size name to a string
+    let sizeString = "";
+    for (let i = 0; i < sizeNames.length; i++) {
+      sizeString += sizeNames[i];
+    }
+
     //newID is food name + all toppings selected
-    newID = props.selectedFood.name + toppingString;
+    newID = props.selectedFood.name + toppingString + sizeString;
     console.log("New ID: " + newID);
   };
 
@@ -39,6 +52,7 @@ const ItemForm = (props) => {
       description: props.selectedFood.description,
       picture: props.selectedFood.picture,
       selectedToppings: props.toppingsArray,
+      selectedSize: props.sizeArray,
       id: newID,
     });
 

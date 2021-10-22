@@ -18,6 +18,8 @@ const mainMeals = [
       { name: "Lettuce", price: 0, isSelected: true },
       { name: "Tomato", price: 0, isSelected: true },
       { name: "Bacon", price: 0.99, isSelected: false },
+    ],
+    sizes: [
       { name: "Extra Patty", price: 1.99, isSelected: false },
     ],
     id: "m1",
@@ -32,6 +34,9 @@ const mainMeals = [
       { name: "Mustard", price: 0, isSelected: false },
       { name: "BBQ Sauce", price: 0, isSelected: false },
     ],
+    sizes: [
+
+    ],
     id: "m2",
     price: 6.99,
   },
@@ -43,6 +48,9 @@ const mainMeals = [
       { name: "Ketchup", price: 0, isSelected: false },
       { name: "Mustard", price: 0, isSelected: false },
       { name: "BBQ Sauce", price: 0, isSelected: false },
+    ],
+    sizes: [
+
     ],
     id: "m3",
     price: 5.99,
@@ -56,6 +64,11 @@ const mainMeals = [
       { name: "Mustard", price: 0, isSelected: false },
       { name: "BBQ Sauce", price: 0, isSelected: false },
     ],
+    sizes: [
+      { name: "6 Nuggets", price: 0, isSelected: true },
+      { name: "12 Nuggets", price: 3.99, isSelected: false },
+      { name: "25 Nuggets", price: 7.99, isSelected: false },
+    ],
     id: "m4",
     price: 4.99,
   },
@@ -67,6 +80,8 @@ const sideMeals = [
     description: "This is a delicious Fries",
     picture: FriesPic,
     toppings: [
+    ],
+    sizes: [
       { name: "Small", price: 0, isSelected: true },
       { name: "Medium", price: 0.99, isSelected: false },
       { name: "Large", price: 1.99, isSelected: false },
@@ -81,6 +96,8 @@ const sideMeals = [
     toppings: [
       { name: "Vanilla", price: 0, isSelected: true },
       { name: "Chocolate", price: 0, isSelected: false },
+    ],
+    sizes: [
       { name: "Single Scoop", price: 0, isSelected: true },
       { name: "Double Scoop", price: 0.99, isSelected: false },
     ],
@@ -92,6 +109,9 @@ const sideMeals = [
     description: "This is a delicious Cookie",
     picture: CookiePic,
     toppings: [
+      
+    ],
+    sizes: [
       { name: "Extra Cookie", price: 0.50, isSelected: false },
     ],
     id: "s3",

@@ -43,18 +43,21 @@ const cartReducer = (state, action) => {
     }
 
     const toppingArray = action.item.selectedToppings;
+    let sizePrice = 0;
+    if (action.item.selectedSize.length > 0) {
+      sizePrice = action.item.selectedSize[0].sizePrice
+    }
+    console.log(action.item.selectedSize[0].sizePrice)
+    console.log(sizePrice)
+    
 
     //Adds the price of selected toppings
     for (let i = 0; i < toppingArray.length; i++) {
       itemToppingPrice += Number(toppingArray[i].toppingPrice);
     }
-    // console.log("TEST itemToppingPrice: " + itemToppingPrice);
 
     const finalPrice =
-      action.item.amount * (action.item.price + itemToppingPrice);
-
-    // const finalToppingPrice = itemToppingPrice * action.item.amount;
-    // console.log("TEST finalToppingPrice: " + finalToppingPrice);
+      action.item.amount * (action.item.price + itemToppingPrice + sizePrice);
 
     let updatedTotalAmount = state.totalAmount + finalPrice;
 
@@ -63,6 +66,11 @@ const cartReducer = (state, action) => {
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   } else if (action.type === "REMOVE") {
     let updatedItems = [...state.items];
+
+    let sizePrice = 0;
+    if (action.item.selectedSize.length > 0) {
+      sizePrice = action.item.selectedSize[0].sizePrice
+    }
 
     let itemToppingPrice = 0;
     const toppingArray = action.item.selectedToppings;
@@ -87,8 +95,9 @@ const cartReducer = (state, action) => {
       updatedItems[existingItemIndex] = updatedItem;
     }
 
+
     let updatedTotalAmount =
-      state.totalAmount - existingItem.price - itemToppingPrice;
+      state.totalAmount - existingItem.price - itemToppingPrice - sizePrice;
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
 };
@@ -97,8 +106,6 @@ const CartProvider = (props) => {
   const [cartState, dispatchCartActions] = useReducer(cartReducer, emptyCart);
 
   const addItemToCartHandler = (item) => {
-    // console.log("Add Item to Cart");
-    // console.log(item);
     dispatchCartActions({ type: "ADD", item: item });
   };
 
