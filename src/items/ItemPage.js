@@ -48,7 +48,7 @@ const ItemPage = (props) => {
       <Card style={{ width: "90%" }}>
         {allSizes.length > 0 && <Card.Header>Select your size</Card.Header>}
         <ListGroup variant="flush">{sizeOptions}</ListGroup>
-        <Card.Header>Select your toppings</Card.Header>
+        {allToppings.length > 0 && <Card.Header>Select your toppings</Card.Header>}
         <ListGroup variant="flush">{toppingOptions}</ListGroup>
         
       </Card>

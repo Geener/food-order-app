@@ -47,9 +47,6 @@ const cartReducer = (state, action) => {
     if (action.item.selectedSize.length > 0) {
       sizePrice = action.item.selectedSize[0].sizePrice
     }
-    console.log(action.item.selectedSize[0].sizePrice)
-    console.log(sizePrice)
-    
 
     //Adds the price of selected toppings
     for (let i = 0; i < toppingArray.length; i++) {
