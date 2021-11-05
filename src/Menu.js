@@ -170,4 +170,9 @@ const drinks = [
   },
 ];
 
-export { mainMeals, sideMeals, drinks };
+const nullItem = {name: null,
+  description: null}
+  
+
+
+export { mainMeals, sideMeals, drinks, nullItem };

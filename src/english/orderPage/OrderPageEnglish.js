@@ -30,9 +30,10 @@ const OrderPageEnglish = (props) => {
     setCurrentFood(item);
   };
 
+
   return (
     <>
-      <Header onOpenCart={openCartHandler} />
+      <Header onOpenCart={openCartHandler} onSelectCurrentFood={selectCurrentFood}/>
       {isCartOpen && <Cart onCloseCart={closeCartHandler} />}
       {currentFood.name === null && (
         <CategoryMainSection onSelectCurrentFood={selectCurrentFood} />
