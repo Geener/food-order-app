@@ -36,7 +36,7 @@ const Cart = (props) => {
       } else {
         return (
           <li>
-            {topping.toppingName}: +${topping.toppingPrice}
+            {topping.toppingName}: +${topping.toppingPrice.toFixed(2)}
           </li>
         );
       }
@@ -51,7 +51,7 @@ const Cart = (props) => {
         } else {
           return (
             <h6>
-              {size.sizeName}: +${size.sizePrice}
+              {size.sizeName}: +${size.sizePrice.toFixed(2)}
             </h6>
           );
         }

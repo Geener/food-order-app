@@ -124,16 +124,49 @@ const drinks = [
     name: "Coffee",
     description: "This is a delicious Coffee",
     picture: null,
+    id: "d0",
+    price: 0.99,
+    sizes: [
+      { name: "Small", price: 0, isSelected: true },
+      { name: "Medium", price: 0.99, isSelected: false },
+      { name: "Large", price: 1.99, isSelected: false },
+    ],
+    toppings: [
+      { name: "Milk", price: 0.0, isSelected: true },
+      { name: "Sugar", price: 0.0, isSelected: true },
+      { name: "Caramel", price: 0.50, isSelected: false },
+      { name: "Vanilla", price: 0.50, isSelected: false },
+    ],
   },
   {
     name: "Hot Chocolate",
     description: "This is a delicious Hot Chocolate",
     picture: null,
+    id: "d1",
+    price: 1.99,
+    sizes: [
+      { name: "Small", price: 0, isSelected: true },
+      { name: "Medium", price: 0.99, isSelected: false },
+      { name: "Large", price: 1.99, isSelected: false },
+    ],
+    toppings: [
+      { name: "Marshmellows", price: 0.25, isSelected: false }
+    ],
   },
   {
     name: "Soft Drink",
     description: "This is a delicious Soft Drink",
     picture: null,
+    id: "d2",
+    price: 0.99,
+    sizes: [
+      { name: "Small", price: 0, isSelected: true },
+      { name: "Medium", price: 0.99, isSelected: false },
+      { name: "Large", price: 1.99, isSelected: false },
+    ],
+    toppings: [
+      { name: "Extra Ice", price: 0, isSelected: false }
+    ],
   },
 ];
 
