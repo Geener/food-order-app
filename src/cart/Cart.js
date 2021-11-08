@@ -16,11 +16,11 @@ const Cart = (props) => {
     console.log(item)
     
 
-    let toppingsPrice = 0;
+    // let toppingsPrice = 0;
 
-    for (let i = 0; i < item.selectedToppings.length; i++) {
-      toppingsPrice += item.selectedToppings[i].toppingPrice;
-    }
+    // for (let i = 0; i < item.selectedToppings.length; i++) {
+    //   toppingsPrice += item.selectedToppings[i].toppingPrice;
+    // }
 
     const onAddItemButtonHandler = () => {
       cartCtx.addItem({ ...item, amount: 1 });

@@ -46,6 +46,7 @@ const cartReducer = (state, action) => {
     let sizePrice = 0;
     if (action.item.selectedSize.length > 0) {
       sizePrice = action.item.selectedSize[0].sizePrice
+      // console.log("sizePrice: " + sizePrice)
     }
 
     //Adds the price of selected toppings
@@ -56,9 +57,13 @@ const cartReducer = (state, action) => {
     const finalPrice =
       action.item.amount * (action.item.price + itemToppingPrice + sizePrice);
 
+     console.log("finalPrice: " + finalPrice); 
+
     let updatedTotalAmount = state.totalAmount + finalPrice;
 
     updatedTotalAmount.toFixed(2);
+
+    // console.log("updatedTotalAmount: " + updatedTotalAmount.toFixed(2));
 
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   } else if (action.type === "REMOVE") {
@@ -81,7 +86,7 @@ const cartReducer = (state, action) => {
 
     //If there is only 1 of the item in the cart, remove the whole item
     if (existingItem.amount === 1) {
-      console.log("1 left " + action.item.id);
+      console.log("removing " + action.item.id);
       updatedItems.pop(existingItem);
     } else {
       let updatedItem = {
@@ -95,6 +100,13 @@ const cartReducer = (state, action) => {
 
     let updatedTotalAmount =
       state.totalAmount - existingItem.price - itemToppingPrice - sizePrice;
+
+      // console.log("state.totalAmount: " + state.totalAmount);
+      // console.log("existingItem.price: " + existingItem.price);
+      // console.log("itemToppingPrice: " + itemToppingPrice);
+      // console.log("sizePrice: " + sizePrice);
+      // console.log("updatedTotalAmount: " + updatedTotalAmount);
+      
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
 };

@@ -24,20 +24,30 @@ const Size = (props) => {
   };
 
   //when checkbox is selected, empty sizeArray and add new size to array
-  const selectedBoxHandler = () => {   
-    sizeArray.splice(0);
-    sizeArray.push({
-        sizeName: props.name,
-        sizePrice: props.price,
+  const selectedBoxHandler = () => {
+    // console.log(sizeArray[0]);
+    // console.log(props.name);
+    if (sizeArray[0].sizeName != props.name) {
+      console.log("hi")
+      sizeArray.splice(0);
+      sizeArray.push({
+      sizeName: props.name,
+      sizePrice: props.price,
     })
-    console.log(sizeArray[0])
-    console.log(sizeArray)
+    } 
+    
   };
 
   //can click on div to checked/uncheck topping
   const divClickHandler = () => {
-    checkboxRef.current.checked = !checkboxRef.current.checked;
-    selectedBoxHandler();
+    // checkboxRef.current.checked = !checkboxRef.current.checked;
+    // selectedBoxHandler();
+    if (sizeArray[0].sizeName != props.name) {
+      console.log("bye")
+      checkboxRef.current.checked = !checkboxRef.current.checked;
+      selectedBoxHandler();
+    }
+    
   };
 
   return (

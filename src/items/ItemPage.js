@@ -23,6 +23,7 @@ const ItemPage = (props) => {
             name={topping.name}
             price={topping.price}
             isSelected={topping.isSelected}
+            key={topping.id}
           />
         </ListGroup.Item>
       </>
@@ -37,7 +38,9 @@ const ItemPage = (props) => {
             sizeArray={selectedSizeArray} 
             name={size.name}
             price={size.price}
-            isSelected={size.isSelected}/>
+            isSelected={size.isSelected}
+            key={size.id}
+          />
         </ListGroup.Item>
         </>
     )
