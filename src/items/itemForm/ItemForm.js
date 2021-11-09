@@ -3,6 +3,8 @@ import { useContext, useRef } from "react";
 import CartContext from "./../../store/CartContext";
 import AddToCartButton from "../../english/orderPage/AddToCartButton";
 
+import classes from "./ItemForm.module.css"
+
 const ItemForm = (props) => {
   const cartCtx = useContext(CartContext);
   const amountInputRef = useRef();
@@ -68,7 +70,8 @@ const ItemForm = (props) => {
   };
 
   return (
-    <>
+    <div className={classes.items}>
+      <div className={classes.input}>
       <input
         ref={amountInputRef}
         label="Amount"
@@ -78,8 +81,11 @@ const ItemForm = (props) => {
         step="1"
         defaultValue="1"
       ></input>
+      </div>
+      <div>
       <AddToCartButton onClick={addToCartHandler} />
-    </>
+      </div>
+    </div>
   );
 };
 

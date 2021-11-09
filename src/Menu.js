@@ -5,6 +5,9 @@ import ChickenNuggetsPic from "./images/chick.jpg";
 import FriesPic from "./images/fries.png";
 import IcecreamPic from "./images/icecream.png";
 import CookiePic from "./images/cookie.png";
+import CoffeePic from "./images/coffee.png"
+import HotChocolatePic from "./images/hotchocolate.jpg"
+import AlcoholPic from "./images/alcohol.png"
 
 const mainMeals = [
   {
@@ -126,7 +129,7 @@ const drinks = [
   {
     name: "Coffee",
     description: "This is a delicious Coffee",
-    picture: null,
+    picture: CoffeePic,
     id: "d0",
     price: 1.00,
     sizes: [
@@ -144,7 +147,7 @@ const drinks = [
   {
     name: "Hot Chocolate",
     description: "This is a delicious Hot Chocolate",
-    picture: null,
+    picture: HotChocolatePic,
     id: "d1",
     price: 1.99,
     sizes: [
@@ -159,7 +162,7 @@ const drinks = [
   {
     name: "Soft Drink",
     description: "This is a delicious Soft Drink",
-    picture: null,
+    picture: AlcoholPic,
     id: "d2",
     price: 1.00,
     sizes: [

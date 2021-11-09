@@ -1,0 +1,50 @@
+.customizeTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: whitesmoke;
+}
+
+.optionCard {
+    color: whitesmoke;
+    border-bottom: 3px dashed rgb(0, 191, 255);
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.outerBorderToppings {
+    border: 3px solid rgb(0, 191, 255);
+}
+
+.outerBorderToppings :last-child {
+    border-bottom: none;
+}
+
+.outerBorderSizes {
+    border: 3px solid rgb(0, 191, 255);
+}
+
+.outerBorderSizes :last-child {
+    border-bottom: none;
+}
+
+.optionBlocks {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainBackground {
+    background-color: #333;
+    height: 90vh;
+}
+
+.addToCart {
+    display: flex;
+    align-items: center;
+}
+
+.sectionTitle {
+    color: whitesmoke;
+    text-align: center;
+}

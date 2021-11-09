@@ -5,8 +5,19 @@
     align-items: stretch;
     color: #333;
     padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 10vh;
+}
+
+.header h1 {
+    margin-left: 10px;
 }
 
 .header h1:hover {
     cursor: pointer;
+}
+
+.cartButton {
+    margin-right: 20px;
 }

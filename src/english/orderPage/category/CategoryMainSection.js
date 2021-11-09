@@ -1,9 +1,6 @@
 import Item from "../../../items/Item";
 import { mainMeals, sideMeals, drinks } from "../../../Menu";
 
-import { Card } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
-
 import classes from "./CategoryMainSection.module.css";
 
 const CategoryMainSection = (props) => {
@@ -19,7 +16,7 @@ const CategoryMainSection = (props) => {
             <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
             <div className={classes.itemDescription}>{meal.description}</div>
           </div>
-          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+          <div className={classes.itemPicture}><img src={meal.picture}></img></div>
         </div>
       </Item>
     );
@@ -37,7 +34,7 @@ const CategoryMainSection = (props) => {
             <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
             <div className={classes.itemDescription}>{meal.description}</div>
           </div>
-          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+          <div className={classes.itemPicture}><img src={meal.picture}></img></div>
         </div>
       </Item>
     );
@@ -55,7 +52,7 @@ const CategoryMainSection = (props) => {
             <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
             <div className={classes.itemDescription}>{meal.description}</div>
           </div>
-          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+          <div className={classes.itemPicture}><img src={meal.picture}></img></div>
         </div>
       </Item>
     );

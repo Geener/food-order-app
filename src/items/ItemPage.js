@@ -1,10 +1,8 @@
 import Topping from "./Topping";
 import Size from "./Size"
-
 import ItemForm from "./itemForm/ItemForm";
 
-import { ListGroup } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import classes from "./ItemPage.module.css"
 
 const ItemPage = (props) => {
   //array of all the toppings for selected food
@@ -16,52 +14,58 @@ const ItemPage = (props) => {
 
   const toppingOptions = allToppings.map((topping) => {
     return (
-      <>
-        <ListGroup.Item>
-          <Topping
+        <div className={classes.optionCard}>
+        <Topping
             toppingsArray={selectedToppingsArray}
             name={topping.name}
             price={topping.price}
             isSelected={topping.isSelected}
             key={topping.id}
           />
-        </ListGroup.Item>
-      </>
+      </div>
     );
   });
 
   const sizeOptions = allSizes.map((size) => {
     return (
-      <>
-      <ListGroup.Item>
-          <Size 
-            sizeArray={selectedSizeArray} 
-            name={size.name}
-            price={size.price}
-            isSelected={size.isSelected}
-            key={size.id}
-          />
-        </ListGroup.Item>
-        </>
+      <div className={classes.optionCard}>
+        <Size 
+          sizeArray={selectedSizeArray} 
+          name={size.name}
+          price={size.price}
+          isSelected={size.isSelected}
+          key={size.id}/>
+      </div>
     )
   })
 
   return (
-    <>
-      <Card style={{ width: "90%" }}>
-        {allSizes.length > 0 && <Card.Header>Select your size</Card.Header>}
-        <ListGroup variant="flush">{sizeOptions}</ListGroup>
-        {allToppings.length > 0 && <Card.Header>Select your toppings</Card.Header>}
-        <ListGroup variant="flush">{toppingOptions}</ListGroup>
-        
-      </Card>
-      <ItemForm
-        toppingsArray={selectedToppingsArray}
-        sizeArray = {selectedSizeArray}
-        selectedFood={props.selectedFood}
-        onSelectCurrentFood={props.onSelectCurrentFood}
-      />
-    </>
+    <div className={classes.mainBackground}>
+      <div className={classes.customizeTitle}><h1>Customize your {props.selectedFood.name}</h1></div>
+      <div className={classes.optionBlocks}>
+        <div className={classes.sizes}>
+          <h2 className={classes.sectionTitle}>Sizes</h2>
+          <div className={classes.outerBorderSizes}>
+            {sizeOptions}
+          </div>
+        </div>
+        <div className={classes.addToCart}>
+          <ItemForm
+            toppingsArray={selectedToppingsArray}
+            sizeArray = {selectedSizeArray}
+            selectedFood={props.selectedFood}
+            onSelectCurrentFood={props.onSelectCurrentFood}
+          />
+        </div>
+        <div className={classes.toppings}>
+          <h2 className={classes.sectionTitle}>Toppings</h2>
+          <div className={classes.outerBorderToppings}>
+            {toppingOptions}
+          </div>
+        </div>
+      </div>
+      
+    </div>
   );
 };
 

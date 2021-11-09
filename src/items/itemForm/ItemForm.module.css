@@ -1,0 +1,9 @@
+.items {
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    size: 100px;
+}
