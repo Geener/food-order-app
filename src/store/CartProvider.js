@@ -85,9 +85,8 @@ const cartReducer = (state, action) => {
     const existingItemIndex = idChecker(state.items, action.item.id);
 
     //If there is only 1 of the item in the cart, remove the whole item
-    if (existingItem.amount === 1) {
-      console.log("removing " + action.item.id);
-      updatedItems.pop(existingItem);
+    if (existingItem.amount == 1) {
+      updatedItems.splice(existingItemIndex, 1);
     } else {
       let updatedItem = {
         ...existingItem,
@@ -100,12 +99,6 @@ const cartReducer = (state, action) => {
 
     let updatedTotalAmount =
       state.totalAmount - existingItem.price - itemToppingPrice - sizePrice;
-
-      // console.log("state.totalAmount: " + state.totalAmount);
-      // console.log("existingItem.price: " + existingItem.price);
-      // console.log("itemToppingPrice: " + itemToppingPrice);
-      // console.log("sizePrice: " + sizePrice);
-      // console.log("updatedTotalAmount: " + updatedTotalAmount);
       
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }

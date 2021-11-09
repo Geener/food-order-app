@@ -20,7 +20,8 @@ const mainMeals = [
       { name: "Bacon", price: 1.00, isSelected: false, id: "t6" },
     ],
     sizes: [
-      { name: "Extra Patty", price: 2.00, isSelected: false, id: "s1" },
+      { name: "One Patty", price: 0.00, isSelected: true, id: "s0" },
+      { name: "Double Patty", price: 2.00, isSelected: false, id: "s1" },
     ],
     id: "m1",
     price: 6.00,
@@ -35,7 +36,8 @@ const mainMeals = [
       { name: "BBQ Sauce", price: 0, isSelected: false, id: "t9" },
     ],
     sizes: [
-
+      { name: "6 Inch", price: 0, isSelected: true, id: "1s2" },
+      { name: "12 Inch", price: 4.00, isSelected: false, id: "2s3" },
     ],
     id: "m2",
     price: 7.00,
@@ -109,10 +111,11 @@ const sideMeals = [
     description: "This is a delicious Cookie",
     picture: CookiePic,
     toppings: [
-      
+      { name: "Chocolate Chips", price: 0, isSelected: false, id: "1t17" },
+      { name: "Raisins", price: 0, isSelected: false, id: "2t17" },
     ],
     sizes: [
-      { name: "Extra Cookie", price: 0.50, isSelected: false, id: "s10" },
+      
     ],
     id: "s3",
     price: 1.00,

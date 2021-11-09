@@ -1,7 +1,7 @@
 const Item = (props) => {
   //When div is clicked, proper food is selected
   const clickHandler = () => {
-    console.log(props.food);
+    // console.log(props.food);
     props.onSelectedFood(props.food);
   };
 

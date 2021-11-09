@@ -13,14 +13,7 @@ const Cart = (props) => {
   const totalAmount = <h3 className={classes.totalPrice}>Total: ${cartCtx.totalAmount.toFixed(2)}</h3>;
 
   const displayItems = cartCtx.items.map((item) => {
-    console.log(item)
-    
-
-    // let toppingsPrice = 0;
-
-    // for (let i = 0; i < item.selectedToppings.length; i++) {
-    //   toppingsPrice += item.selectedToppings[i].toppingPrice;
-    // }
+    // console.log(item)
 
     const onAddItemButtonHandler = () => {
       cartCtx.addItem({ ...item, amount: 1 });
@@ -66,7 +59,7 @@ const Cart = (props) => {
           <h5>
             {item.name} ${item.price}
           </h5>
-          <h6>{displaySize}</h6>
+          <div>{displaySize}</div>
           <ul>{displayToppings}</ul>
         </div>
         <CartAddRemoveButtons

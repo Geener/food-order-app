@@ -34,7 +34,7 @@ const ItemForm = (props) => {
     for (let i = 0; i < sizeNames.length; i++) {
       sizeString += sizeNames[i];
     }
-    console.log("sizeString: " + sizeString);
+    // console.log("sizeString: " + sizeString);
 
     //newID is food name + all toppings selected
     newID = props.selectedFood.name + toppingString + sizeString;

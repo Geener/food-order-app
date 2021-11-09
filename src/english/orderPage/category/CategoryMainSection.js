@@ -4,6 +4,8 @@ import { mainMeals, sideMeals, drinks } from "../../../Menu";
 import { Card } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
 
+import classes from "./CategoryMainSection.module.css";
+
 const CategoryMainSection = (props) => {
   const mainItemCards = mainMeals.map((meal) => {
     return (
@@ -12,15 +14,13 @@ const CategoryMainSection = (props) => {
         food={meal}
         onSelectedFood={props.onSelectCurrentFood}
       >
-        <Card>
-          <Card.Img variant="top" src={meal.picture} />
-          <Card.Body>
-            <Card.Title>
-              {meal.name} ${meal.price}
-            </Card.Title>
-            <Card.Text>{meal.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <div className={classes.itemCard}>
+          <div className={classes.itemInfo}>
+            <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
+            <div className={classes.itemDescription}>{meal.description}</div>
+          </div>
+          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+        </div>
       </Item>
     );
   });
@@ -32,15 +32,13 @@ const CategoryMainSection = (props) => {
         food={meal}
         onSelectedFood={props.onSelectCurrentFood}
       >
-        <Card>
-          <Card.Img variant="top" src={meal.picture} />
-          <Card.Body>
-          <Card.Title>
-              {meal.name} ${meal.price}
-          </Card.Title>
-          <Card.Text>{meal.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <div className={classes.itemCard}>
+          <div className={classes.itemInfo}>
+            <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
+            <div className={classes.itemDescription}>{meal.description}</div>
+          </div>
+          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+        </div>
       </Item>
     );
   });
@@ -52,40 +50,26 @@ const CategoryMainSection = (props) => {
         food={meal}
         onSelectedFood={props.onSelectCurrentFood}
       >
-        <Card>
-          <Card.Img variant="top" src={meal.picture} />
-          <Card.Body>
-          <Card.Title>
-              {meal.name} ${meal.price}
-          </Card.Title>
-          <Card.Text>{meal.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <div className={classes.itemCard}>
+          <div className={classes.itemInfo}>
+            <div className={classes.itemTitle}>{meal.name} ${meal.price}</div>
+            <div className={classes.itemDescription}>{meal.description}</div>
+          </div>
+          <div itemDeclassName={classes.itemPicture}scription><img src={meal.picture}></img></div>
+        </div>
       </Item>
     );
   });
 
   return (
-    <>
-      <Card style={{ width: "90%" }}>
-        <Card.Body>
-          <Card.Title>Main Items</Card.Title>
-          <CardGroup>{mainItemCards}</CardGroup>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "90%" }}>
-        <Card.Body>
-          <Card.Title>Side Items</Card.Title>
-          <CardGroup>{sideItemCards}</CardGroup>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "90%" }}>
-        <Card.Body>
-          <Card.Title>Drinks</Card.Title>
-          <CardGroup>{drinkCards}</CardGroup>
-        </Card.Body>
-      </Card>
-    </>
+    <div className={classes.mainBackground}>
+      <div className={classes.sectionHeader}><h1>Main Items</h1></div>
+      {mainItemCards}
+      <div className={classes.sectionHeader}><h1>Side Items</h1></div>
+      {sideItemCards}
+      <div className={classes.sectionHeader}><h1>Drinks</h1></div>
+      {drinkCards}
+    </div >
   );
 };
 
