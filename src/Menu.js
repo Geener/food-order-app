@@ -20,14 +20,14 @@ const mainMeals = [
       { name: "Relish", price: 0, isSelected: false, id: "t3"  },
       { name: "Lettuce", price: 0, isSelected: true, id: "t4"  },
       { name: "Tomato", price: 0, isSelected: true, id: "t5" },
-      { name: "Bacon", price: 1.00, isSelected: false, id: "t6" },
+      { name: "Bacon", price: 0.99, isSelected: false, id: "t6" },
     ],
     sizes: [
       { name: "One Patty", price: 0.00, isSelected: true, id: "s0" },
-      { name: "Double Patty", price: 2.00, isSelected: false, id: "s1" },
+      { name: "Double Patty", price: 1.99, isSelected: false, id: "s1" },
     ],
     id: "m1",
-    price: 6.00,
+    price: 5.99,
   },
   {
     name: "Sandwich",
@@ -40,10 +40,10 @@ const mainMeals = [
     ],
     sizes: [
       { name: "6 Inch", price: 0, isSelected: true, id: "1s2" },
-      { name: "12 Inch", price: 4.00, isSelected: false, id: "2s3" },
+      { name: "12 Inch", price: 3.99, isSelected: false, id: "2s3" },
     ],
     id: "m2",
-    price: 7.00,
+    price: 6.99,
   },
   {
     name: "Wrap",
@@ -55,10 +55,11 @@ const mainMeals = [
       { name: "BBQ Sauce", price: 0, isSelected: false, id: "t12" },
     ],
     sizes: [
-
+      { name: "Normal", price: 0, isSelected: true, id: "s17" },
+      { name: "Large", price: 0.99, isSelected: false, id: "s18" },
     ],
     id: "m3",
-    price: 6.00
+    price: 5.99
   },
   {
     name: "Chicken Nuggets",
@@ -71,11 +72,11 @@ const mainMeals = [
     ],
     sizes: [
       { name: "6 Nuggets", price: 0, isSelected: true, id: "s2" },
-      { name: "12 Nuggets", price: 4.00, isSelected: false, id: "s3" },
-      { name: "25 Nuggets", price: 8.00, isSelected: false, id: "s4" },
+      { name: "12 Nuggets", price: 3.99, isSelected: false, id: "s3" },
+      { name: "25 Nuggets", price: 7.99, isSelected: false, id: "s4" },
     ],
     id: "m4",
-    price: 5.00,
+    price: 4.99,
   },
 ];
 
@@ -85,14 +86,17 @@ const sideMeals = [
     description: "This is a delicious Fries",
     picture: FriesPic,
     toppings: [
+      { name: "Ketchup", price: 0, isSelected: false, id: "t13" },
+      { name: "Mustard", price: 0, isSelected: false, id: "t14" },
+      { name: "BBQ Sauce", price: 0, isSelected: false, id: "t15" },
     ],
     sizes: [
       { name: "Small", price: 0, isSelected: true, id: "s5" },
-      { name: "Medium", price: 1.00, isSelected: false, id: "s6" },
-      { name: "Large", price: 2.00, isSelected: false, id: "s7" },
+      { name: "Medium", price: 1.99, isSelected: false, id: "s6" },
+      { name: "Large", price: 2.99, isSelected: false, id: "s7" },
     ],
     id: "s1",
-    price: 2.00,
+    price: 1.99,
   },
   {
     name: "Ice Cream",
@@ -104,10 +108,10 @@ const sideMeals = [
     ],
     sizes: [
       { name: "Single Scoop", price: 0, isSelected: true, id: "s8"},
-      { name: "Double Scoop", price: 1.00, isSelected: false, id: "s9" },
+      { name: "Double Scoop", price: 0.99, isSelected: false, id: "s9" },
     ],
     id: "s2",
-    price: 2.00,
+    price: 1.99,
   },
   {
     name: "Cookie",
@@ -118,10 +122,11 @@ const sideMeals = [
       { name: "Raisins", price: 0, isSelected: false, id: "2t17" },
     ],
     sizes: [
-      
+      { name: "Normal", price: 0, isSelected: true, id: "s17" },
+      { name: "Double Decker", price: 0.99, isSelected: false, id: "s18" },
     ],
     id: "s3",
-    price: 1.00,
+    price: 0.99,
   },
 ];
 
@@ -131,11 +136,11 @@ const drinks = [
     description: "This is a delicious Coffee",
     picture: CoffeePic,
     id: "d0",
-    price: 1.00,
+    price: 0.99,
     sizes: [
       { name: "Small", price: 0, isSelected: true, id: "s11" },
-      { name: "Medium", price: 1.00, isSelected: false, id: "s12" },
-      { name: "Large", price: 2.00, isSelected: false, id: "s13" },
+      { name: "Medium", price: 0.50, isSelected: false, id: "s12" },
+      { name: "Large", price: 0.99, isSelected: false, id: "s13" },
     ],
     toppings: [
       { name: "Milk", price: 0.0, isSelected: true, id: "t18" },
@@ -152,8 +157,8 @@ const drinks = [
     price: 1.99,
     sizes: [
       { name: "Small", price: 0, isSelected: true, id: "s14" },
-      { name: "Medium", price: 1.00, isSelected: false, id: "s15" },
-      { name: "Large", price: 2.00, isSelected: false, id: "s16" },
+      { name: "Medium", price: 0.99, isSelected: false, id: "s15" },
+      { name: "Large", price: 1.99, isSelected: false, id: "s16" },
     ],
     toppings: [
       { name: "Marshmellows", price: 0.25, isSelected: false, id: "t22" }
@@ -164,11 +169,11 @@ const drinks = [
     description: "This is a delicious Soft Drink",
     picture: AlcoholPic,
     id: "d2",
-    price: 1.00,
+    price: 0.99,
     sizes: [
       { name: "Small", price: 0, isSelected: true, id: "s17" },
-      { name: "Medium", price: 1.00, isSelected: false, id: "s18" },
-      { name: "Large", price: 2.00, isSelected: false, id: "s19" },
+      { name: "Medium", price: 0.99, isSelected: false, id: "s18" },
+      { name: "Large", price: 1.99, isSelected: false, id: "s19" },
     ],
     toppings: [
       { name: "Extra Ice", price: 0, isSelected: false, id: "t23" }
