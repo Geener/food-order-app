@@ -1,9 +1,11 @@
-.items {
-    display: flexbox;
-    align-items: center;
-    justify-content: center;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    
 }
 
-.input {
-    size: 100px;
+.inputArea {
+    height:400px;
+    font-size:20pt;
 }

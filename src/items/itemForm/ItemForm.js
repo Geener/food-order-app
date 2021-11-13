@@ -70,22 +70,22 @@ const ItemForm = (props) => {
   };
 
   return (
-    <div className={classes.items}>
-      <div className={classes.input}>
+    <span className={classes.items}>
+      <span className={classes.inputArea}>
       <input
         ref={amountInputRef}
         label="Amount"
         type="number"
         min="1"
-        max="5"
+        max="10"
         step="1"
         defaultValue="1"
       ></input>
-      </div>
-      <div>
+      </span>
+      <span>
       <AddToCartButton onClick={addToCartHandler} />
-      </div>
-    </div>
+      </span>
+    </span>
   );
 };
 

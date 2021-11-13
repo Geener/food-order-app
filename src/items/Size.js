@@ -19,7 +19,9 @@ const Size = (props) => {
     if (price === 0) {
       return <h5></h5>;
     } else {
-      return <h5>+${props.price.toFixed(2)}</h5>;
+      return <h5 style={{
+            display: "inline"
+          }}>+${props.price.toFixed(2)}</h5>;
     }
   };
 

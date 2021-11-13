@@ -5,7 +5,7 @@ const Item = (props) => {
     props.onSelectedFood(props.food);
   };
 
-  return <div onClick={clickHandler}>{props.children}</div>;
+  return <span onClick={clickHandler}>{props.children}</span>;
 };
 
 export default Item;

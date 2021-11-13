@@ -5,9 +5,15 @@ import CartProvider from "./store/CartProvider";
 
 function App() {
   return (
-    <CartProvider>
-      <OrderPageEnglish />
-    </CartProvider>
+    <div
+    style={{
+      backgroundColor: '#333',
+      height: "100%",
+    }}>
+        <CartProvider>
+          <OrderPageEnglish />
+        </CartProvider>
+      </div>
   );
 }
 

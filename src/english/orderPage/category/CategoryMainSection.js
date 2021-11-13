@@ -59,14 +59,14 @@ const CategoryMainSection = (props) => {
   });
 
   return (
-    <div className={classes.mainBackground}>
+    <>
       <div className={classes.sectionHeader}><h1>Main Items</h1></div>
       {mainItemCards}
       <div className={classes.sectionHeader}><h1>Side Items</h1></div>
       {sideItemCards}
       <div className={classes.sectionHeader}><h1>Drinks</h1></div>
       {drinkCards}
-    </div >
+    </>
   );
 };
 

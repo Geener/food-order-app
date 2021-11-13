@@ -28,25 +28,31 @@ const ItemPage = (props) => {
 
   const sizeOptions = allSizes.map((size) => {
     return (
-      <div className={classes.optionCard}>
+      <span className={classes.optionCard}>
         <Size 
           sizeArray={selectedSizeArray} 
           name={size.name}
           price={size.price}
           isSelected={size.isSelected}
           key={size.id}/>
-      </div>
+      </span>
     )
   })
 
   return (
-    <div className={classes.mainBackground}>
+    <div className={classes.wholePage}>
       <div className={classes.customizeTitle}><h1>Customize your {props.selectedFood.name}</h1></div>
       <div className={classes.optionBlocks}>
         <div className={classes.sizes}>
           <h2 className={classes.sectionTitle}>Sizes</h2>
           <div className={classes.outerBorderSizes}>
             {sizeOptions}
+          </div>
+        </div>
+        <div className={classes.toppings}>
+          <h2 className={classes.sectionTitle}>Toppings</h2>
+          <div className={classes.outerBorderToppings}>
+            {toppingOptions}
           </div>
         </div>
         <div className={classes.addToCart}>
@@ -57,15 +63,8 @@ const ItemPage = (props) => {
             onSelectCurrentFood={props.onSelectCurrentFood}
           />
         </div>
-        <div className={classes.toppings}>
-          <h2 className={classes.sectionTitle}>Toppings</h2>
-          <div className={classes.outerBorderToppings}>
-            {toppingOptions}
-          </div>
-        </div>
       </div>
-      
-    </div>
+      </div>
   );
 };
 
